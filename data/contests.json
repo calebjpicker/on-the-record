@@ -1,0 +1,76 @@
+[
+  {
+    "id": "senate-majority-leader-2027",
+    "title": "Senate Majority Leader",
+    "congress": "120th Congress",
+    "summary": "Senate Democrats choose their leader for the next Congress. Because Democrats won the Senate majority on November 3, 2026, their leader becomes Majority Leader.",
+    "who_votes": "Senators and senators-elect in the Senate Democratic caucus for the 120th Congress, including independents who caucus with Democrats.",
+    "electorate_note": "Reported as 54 to 56 seats, with results still being finalized.",
+    "candidates": [
+      {
+        "id": "schumer",
+        "name": "Charles E. Schumer",
+        "seat": "D-NY",
+        "note": "Current Democratic leader. Said on November 4, 2026: \"I'll be reelected as majority leader.\"",
+        "source_title": "Roll Call, November 4, 2026",
+        "source_url": "https://rollcall.com/2026/11/04/will-be-reelected-as-majority-leader-schumer-says/"
+      }
+    ],
+    "stages": [
+      {
+        "name": "Caucus vote",
+        "when": "Expected in early December 2026. No date has been announced.",
+        "ballot": "Secret ballot behind closed doors. No individual votes will be published, so public statements are the only record.",
+        "public_record": false
+      }
+    ],
+    "sources": [
+      {
+        "title": "Roll Call: 'I'll be reelected as majority leader,' Schumer says",
+        "url": "https://rollcall.com/2026/11/04/will-be-reelected-as-majority-leader-schumer-says/"
+      },
+      {
+        "title": "Newsweek: Chuck Schumer in peril as voices grow against Senate majority leader",
+        "url": "https://www.newsweek.com/chuck-schumer-senate-majority-leadership-democrats-12700175"
+      }
+    ]
+  },
+  {
+    "id": "house-speaker-2027",
+    "title": "Speaker of the House",
+    "congress": "120th Congress",
+    "summary": "The House elects its Speaker when the new Congress convenes. Before that, each party's members choose a nominee in private.",
+    "who_votes": "For the nomination: House Democrats elected to the 120th Congress. For the floor vote: every member-elect of the House.",
+    "electorate_note": "Reported as at least 254 Democrats and 165 Republicans, with some races undecided.",
+    "candidates": [
+      {
+        "id": "jeffries",
+        "name": "Hakeem Jeffries",
+        "seat": "D-NY",
+        "note": "Current House Democratic leader. Reported to have launched his bid on November 4, 2026, and to be unopposed for the nomination so far.",
+        "source_title": "Newsweek, November 11, 2026",
+        "source_url": "https://www.newsweek.com/jeffries-path-to-house-speaker-raises-specter-of-mccarthy-style-revolt-12697313"
+      }
+    ],
+    "stages": [
+      {
+        "name": "House Democratic caucus vote on a nominee",
+        "when": "Scheduled for November 18, 2026, according to press reports.",
+        "ballot": "Behind closed doors. Individual votes are not expected to be published.",
+        "public_record": false
+      },
+      {
+        "name": "Floor vote of the full House",
+        "when": "January 3, 2027, when the 120th Congress convenes.",
+        "ballot": "Public roll call. Each member's vote is recorded by name, so declarations can be compared with the recorded vote afterward.",
+        "public_record": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "Newsweek: Jeffries' path to House speaker raises specter of McCarthy-style revolt",
+        "url": "https://www.newsweek.com/jeffries-path-to-house-speaker-raises-specter-of-mccarthy-style-revolt-12697313"
+      }
+    ]
+  }
+]
