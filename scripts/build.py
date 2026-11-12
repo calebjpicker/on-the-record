@@ -42,6 +42,10 @@ REQUIRED_DECLARATION_FIELDS = [
     "statement", "reported_on", "source_title", "source_url",
 ]
 
+# Status of a member on a contest's roster. "pending" is a race that has not been called.
+ROSTER_STATUSES = {"continuing", "re-elected", "elect", "pending"}
+REQUIRED_ROSTER_FIELDS = ["name", "state", "party", "status", "source_url"]
+
 
 class DataError(Exception):
     pass
@@ -52,6 +56,44 @@ def load_json(path: Path):
         return json.loads(path.read_text(encoding="utf-8"))
     except json.JSONDecodeError as exc:
         raise DataError(f"{path.relative_to(ROOT)}: invalid JSON: {exc}") from exc
+
+
+def load_roster(contest, errors):
+    """Load the roster of members who vote in a contest, when the contest names one."""
+    rid = contest.get("electorate")
+    if not rid:
+        return None
+    path = DATA / "rosters" / f"{rid}.json"
+    rel = path.relative_to(ROOT)
+    if not path.exists():
+        errors.append(f"contests.json: {contest.get('id')}: roster {rel} not found")
+        return None
+    roster = load_json(path)
+    for field in ("title", "as_of", "description", "members"):
+        if not roster.get(field):
+            errors.append(f"{rel}: missing {field}")
+    try:
+        date.fromisoformat(str(roster.get("as_of", "")))
+    except ValueError:
+        errors.append(f"{rel}: as_of must be YYYY-MM-DD")
+    names = set()
+    for i, m in enumerate(roster.get("members", [])):
+        where = f"{rel}[{i}] {m.get('name', '?')}"
+        for field in REQUIRED_ROSTER_FIELDS:
+            if not str(m.get(field, "")).strip():
+                errors.append(f"{where}: missing {field}")
+        if m.get("status") not in ROSTER_STATUSES:
+            errors.append(f"{where}: status must be one of {sorted(ROSTER_STATUSES)}")
+        if not str(m.get("source_url", "")).startswith("https://"):
+            errors.append(f"{where}: source_url must start with https://")
+        if m.get("name") in names:
+            errors.append(f"{where}: listed more than once")
+        names.add(m.get("name"))
+    for c in contest.get("candidates", []):
+        if c.get("roster_name") not in names:
+            errors.append(f"contests.json: {contest.get('id')}: candidate {c.get('id')!r} "
+                          "needs a roster_name that matches the roster")
+    return roster
 
 
 def load_data():
@@ -68,6 +110,8 @@ def load_data():
             if not contest.get(field):
                 errors.append(f"contests.json: {cid}: missing {field}")
         candidate_ids = {c["id"] for c in contest.get("candidates", [])}
+        roster = load_roster(contest, errors)
+        roster_names = {m.get("name") for m in roster.get("members", [])} if roster else None
 
         path = DATA / "declarations" / f"{cid}.json"
         declarations = load_json(path) if path.exists() else []
@@ -84,6 +128,8 @@ def load_data():
                 errors.append(f"{where}: basis must be one of {sorted(BASES)}")
             if d.get("candidate") not in candidate_ids:
                 errors.append(f"{where}: unknown candidate {d.get('candidate')!r}")
+            if roster_names is not None and d.get("member") not in roster_names:
+                errors.append(f"{where}: not on the roster for this contest (names must match exactly)")
             if not str(d.get("source_url", "")).startswith("https://"):
                 errors.append(f"{where}: source_url must start with https://")
             try:
@@ -95,6 +141,7 @@ def load_data():
                 errors.append(f"{where}: more than one entry for this member and candidate")
             seen_members.add(key)
         contest["declarations"] = declarations
+        contest["roster"] = roster
     if errors:
         raise DataError("\n".join(errors))
     return contests
@@ -152,6 +199,12 @@ ul.plain{padding-left:20px;color:var(--muted)}
 footer.site{border-top:1px solid var(--rule);background:var(--wash);font-size:14px;color:var(--muted)}
 footer.site .wrap{padding-top:20px;padding-bottom:20px;display:flex;flex-wrap:wrap;gap:8px 24px;
 justify-content:space-between}
+.note{font-size:16px;color:var(--muted);max-width:720px;margin:0}
+.roster{list-style:none;margin:20px 0 0;padding:0;display:grid;
+grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px 24px}
+.roster li{border-top:1px solid var(--rule);padding-top:8px;font-size:15px}
+.roster .name{font-weight:600}
+.roster .sub{display:block;font-size:13px;color:var(--muted)}
 """
 
 REPO_URL = "https://github.com/calebjpicker/on-the-record"
@@ -198,6 +251,55 @@ def counts(contest) -> dict:
     return result
 
 
+def undeclared(contest):
+    """Roster members with no declaration, leaving out candidates and uncalled races.
+    Returns None when the contest has no roster."""
+    roster = contest.get("roster")
+    if not roster:
+        return None
+    skip = {d["member"] for d in contest["declarations"]}
+    skip |= {c.get("roster_name") for c in contest["candidates"]}
+    return sorted((m for m in roster["members"] if m["status"] != "pending" and m["name"] not in skip),
+                  key=lambda m: (m["state"], m["name"]))
+
+
+def render_undeclared(contest, und) -> str:
+    roster = contest["roster"]
+    seat = roster.get("seat_title", "Member")
+    noun = roster.get("member_noun", "members")
+    pending = [m for m in roster["members"] if m["status"] == "pending"]
+    seated = len(roster["members"]) - len(pending)
+    submit = f"{REPO_URL}/issues/new?template=statement.yml"
+    parts = [
+        '<h2 id="undeclared">Undeclared</h2>',
+        f'<p class="note">{len(und)} of the {seated} {escape(noun)} on the roster have no public statement '
+        f'on file. Candidates are not counted. Know of a statement? <a href="{submit}">Send it with the '
+        "source</a>.</p>",
+        '<ul class="roster">',
+    ]
+    for m in und:
+        tags = [f"{seat}-elect"] if m["status"] == "elect" else []
+        if m.get("note"):
+            tags.append(m["note"])
+        parts.append(
+            f'<li><span class="name">{escape(m["name"])}</span> '
+            f'<span class="mono">{escape(m["party"])}-{escape(m["state"])}</span>'
+            + "".join(f'<span class="sub">{escape(t)}</span>' for t in tags) + "</li>"
+        )
+    parts.append("</ul>")
+    if pending:
+        parts.append('<h3 style="margin-top:28px">Races not yet called</h3><ul class="plain">')
+        for m in pending:
+            parts.append(f'<li>{escape(m["state"])}: {escape(m["name"])} '
+                         f'<span class="mono">{escape(m["party"])}</span>. '
+                         f'{source_link("Source", m["source_url"])}</li>')
+        parts.append("</ul>")
+    parts.append(f'<p class="kicker">{escape(roster["description"])} Roster as of {escape(roster["as_of"])}. '
+                 f'The source for each member is in the <a class="mono" href="../data/{contest["id"]}.json">'
+                 "contest data</a>.</p>")
+    return "\n".join(parts)
+
+
 def source_link(title: str, url: str) -> str:
     return f'<a href="{escape(url, quote=True)}" rel="noopener">{escape(title)}</a>'
 
@@ -235,11 +337,19 @@ def render_contest(contest) -> str:
             f'<div><div class="label c-{key}">{escape(label)}</div>'
             f'<div class="num">{tally[key]}</div></div>'
         )
-    parts.append(
-        '<div><div class="label c-muted">Undeclared</div>'
-        '<div class="num c-muted" style="font-size:22px;line-height:1.3;padding-top:8px">Everyone else</div>'
-        '<div class="small">No public statement on file. Full roster coming.</div></div></div>'
-    )
+    und = undeclared(contest)
+    if und is None:
+        parts.append(
+            '<div><div class="label c-muted">Undeclared</div>'
+            '<div class="num c-muted" style="font-size:22px;line-height:1.3;padding-top:8px">Everyone else</div>'
+            '<div class="small">No public statement on file. Full roster coming.</div></div></div>'
+        )
+    else:
+        parts.append(
+            '<div><div class="label c-muted">Undeclared</div>'
+            f'<div class="num c-muted">{len(und)}</div>'
+            '<div class="small">No public statement on file. <a href="#undeclared">See who</a></div></div></div>'
+        )
 
     parts.append("<h2>Public statements</h2>")
     if contest["declarations"]:
@@ -262,6 +372,9 @@ def render_contest(contest) -> str:
         parts.append("</tbody></table></div>")
     else:
         parts.append('<p class="lede">No public statements on file yet.</p>')
+
+    if und is not None:
+        parts.append(render_undeclared(contest, und))
 
     parts.append("<h2>How entries are classified</h2><ul class=\"plain\">")
     for key, label in POSITIONS.items():
@@ -289,12 +402,14 @@ def render_index(contests) -> str:
     for contest in contests:
         tally = counts(contest)
         first_stage = contest["stages"][0]
+        und = undeclared(contest)
         parts.append(
             f'<a class="card" href="{contest["id"]}/">'
             f'<div class="kicker mono">{escape(contest.get("congress", ""))} · {escape(first_stage["when"])}</div>'
             f'<div class="title">{escape(contest["title"])}</div>'
             '<div class="counts">'
             + "".join(f'<span class="c-{k}">{tally[k]} {escape(POSITIONS[k].lower())}</span>' for k in POSITIONS)
+            + (f'<span class="c-muted">{len(und)} undeclared</span>' if und is not None else "")
             + "</div></a>"
         )
     parts.append("</div>")
@@ -325,7 +440,7 @@ def build(contests) -> None:
         (OUT / "data" / f'{contest["id"]}.json').write_text(
             json.dumps(contest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (OUT / "data" / "contests.json").write_text(
-        json.dumps([{k: v for k, v in c.items() if k != "declarations"} for c in contests],
+        json.dumps([{k: v for k, v in c.items() if k not in ("declarations", "roster")} for c in contests],
                    indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
 
