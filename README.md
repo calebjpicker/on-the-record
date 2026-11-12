@@ -73,13 +73,6 @@ We read the two governing documents directly. Neither one mentions a registry li
 
 The ProPublica Congress API and the GovTrack API are no longer available.
 
-## Known risks
-
-- **Participation.** Members often decline to commit in advance. Vote Smart reports that responses to its candidate questionnaire fell from 72% in 1996 to about 24% in 2020. The site is designed to be useful with zero cooperation: every member starts as undeclared, and public statements can be added by anyone with a source.
-- **Deliverability.** The House states that it does not give outside senders preferential treatment in its mail filtering. Requests may land in junk folders.
-- **Email authentication.** Secondary sources report that `senate.gov` publishes a strict DMARC policy and `house.gov` does not. Whether real office mail carries a verifiable domain signature has not been tested.
-- **Short notice.** Amendments and procedural votes can be scheduled with hours of notice. The first version should cover a small number of major votes.
-
 ## Proposed principles
 
 - Nonpartisan. No ratings, endorsements or advocacy.
