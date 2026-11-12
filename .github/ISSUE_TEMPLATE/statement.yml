@@ -1,0 +1,71 @@
+name: Add or correct a statement
+description: Send a public statement by a member of Congress about an upcoming vote, or a correction to an entry on the site.
+title: "Statement: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for adding to the record. Every entry needs a public source that anyone can open.
+        Positions are classified by the member's own words. The full rules are in [data/README.md](https://github.com/calebjpicker/on-the-record/blob/main/data/README.md).
+  - type: dropdown
+    id: contest
+    attributes:
+      label: Vote
+      options:
+        - Senate Majority Leader (120th Congress)
+        - Speaker of the House (120th Congress)
+        - Another vote
+    validations:
+      required: true
+  - type: input
+    id: member
+    attributes:
+      label: Member
+      description: The senator, representative, or member-elect, with their state.
+      placeholder: Name and state
+    validations:
+      required: true
+  - type: dropdown
+    id: position
+    attributes:
+      label: Position
+      description: A call for change that stops short of saying how the member will vote counts as uncommitted.
+      options:
+        - Supports the candidate
+        - Will not support the candidate
+        - Uncommitted
+        - Correction to an entry already on the site
+    validations:
+      required: true
+  - type: input
+    id: candidate
+    attributes:
+      label: Candidate the statement is about
+      description: Leave blank if it is not about a candidate.
+  - type: textarea
+    id: statement
+    attributes:
+      label: What the member said
+      description: Their exact words in quotation marks, or one sentence describing what the source reports. For a correction, say what is wrong and what it should say.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source link
+      description: A public https link to where the statement was published or reported.
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: published
+    attributes:
+      label: Date published
+      placeholder: YYYY-MM-DD
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before you send
+      options:
+        - label: The source is public, and anyone can open the link.
+          required: true

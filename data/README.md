@@ -9,7 +9,9 @@ A member with no entry is **undeclared**. That is never written down; it is the 
 
 ## Adding or correcting a statement
 
-Add an object to the contest's file in `declarations/`:
+No git needed: send it with the [Add or correct a statement](https://github.com/calebjpicker/on-the-record/issues/new?template=statement.yml) form, and a maintainer adds it to the data.
+
+To edit the data directly, add an object to the contest's file in `declarations/`:
 
 | Field | Meaning |
 |---|---|

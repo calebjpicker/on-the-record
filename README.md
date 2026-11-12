@@ -82,6 +82,7 @@ The ProPublica Congress API and the GovTrack API are no longer available.
 
 ## How to help
 
+- **Anyone with a source:** send a public statement or a correction with the [Add or correct a statement](https://github.com/calebjpicker/on-the-record/issues/new?template=statement.yml) form. It needs a free GitHub account.
 - **Congressional staff or former staff:** tell us whether an office would answer a request like this, and who in the office would decide.
 - **Ethics and administration counsel:** check our reading of the chamber rules above.
 - **Email engineers:** test whether House and Senate office mail carries a verifiable DKIM signature, and design the inbound verification.
