@@ -1,23 +1,25 @@
 # On the Record (working title)
 
-A public, open-source registry of how each member of Congress says they will vote on upcoming votes, before the vote happens.
+A public, open-source record of how Democrats in Congress say they will vote, kept before the vote happens so Democratic voters can hold them to it.
 
-For each upcoming vote, every senator or representative is listed with one of four states:
+For each upcoming vote, every member of the Democratic caucus in that chamber, independents included, is listed with one of four states:
 
 | State | Meaning |
 |---|---|
 | **Yes** | The office has stated the member will vote yes. |
 | **No** | The office has stated the member will vote no. |
 | **Undecided** | The office has answered, and the answer is that the member has not decided. |
-| **Undeclared** | No answer on file. This is the default for all 535 members. |
+| **Undeclared** | No answer on file. This is the default for every member. |
 
 Each entry carries an optional comment from the office, a source, a timestamp and a full public change history. After the vote, the recorded vote is shown next to what was declared.
 
-**Status: design stage.** There are mockups and research, and no running code yet. Help is wanted; see [How to help](#how-to-help).
+**Status: early.** The tracker covers two leadership contests for the 120th Congress: Senate Majority Leader and Speaker of the House. Help is wanted; see [How to help](#how-to-help).
 
 ## Why
 
 Positions on upcoming votes are scattered across press releases, social posts and one-off news "whip lists" compiled by hand. Nothing we found keeps a standing, open, per-member record that anyone can read, link to, embed or audit.
+
+This project starts with Democrats, so that Democratic voters can see where their own members stand before a vote and hold them to it. Every member of the caucus is held to the same standard, leadership and its critics alike.
 
 ## How it works
 
@@ -57,7 +59,7 @@ We read the two governing documents directly. Neither one mentions a registry li
 **What this means for the design**
 
 - Email reply is the primary flow, because it needs no account.
-- The project must be strictly nonpartisan and non-campaign: no scorecards, no endorsements, no calls to action against a member.
+- These rules govern what offices may do with official resources, not what this project may be. The practical effect of the project's focus on Democrats is that an office may be slower to answer it from an official account, so public statements with sources come first.
 - Requests to offices should read like a press inquiry, which is the most established category in both documents.
 
 ## Data sources
@@ -75,7 +77,8 @@ The ProPublica Congress API and the GovTrack API are no longer available.
 
 ## Proposed principles
 
-- Nonpartisan. No ratings, endorsements or advocacy.
+- Focused on Democrats. The project tracks Democratic members of Congress and the independents who caucus with them, and holds every one of them to the same standard.
+- Entries are factual. A position is classified by the member's own words, not by what anyone expects or hopes they will do.
 - Every entry has a source and a public history. Nothing is silently changed or removed.
 - Code is open source. Data is public domain (CC0).
 - The data lives as plain files in this repository, so every change is a reviewable commit.
@@ -86,7 +89,7 @@ The ProPublica Congress API and the GovTrack API are no longer available.
 - **Ethics and administration counsel:** check our reading of the chamber rules above.
 - **Email engineers:** test whether House and Senate office mail carries a verifiable DKIM signature, and design the inbound verification.
 - **Civic-data developers:** build the schedule ingest for the House and Senate feeds and the recorded-vote comparison.
-- **Designers and writers:** review the mockups and the wording of the request email for neutrality.
+- **Designers and writers:** review the site and the wording of the request email for accuracy and clarity.
 - **Anyone:** help compile the public list of each office's press contact address.
 
 ## Open questions

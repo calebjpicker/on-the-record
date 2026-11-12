@@ -1,13 +1,16 @@
 # Contributing
 
-Thanks for helping. This project is at the design stage, so the most useful
-contributions right now are review, research and corrections as much as code.
-The [README](README.md) lists where help is wanted.
+Thanks for helping. This project is early, so review, research and corrections
+are as useful as code. The [README](README.md) lists where help is wanted.
 
 ## Ground rules
 
-- **Nonpartisan.** No ratings, endorsements, advocacy or calls to action about
-  any member, party or bill. Wording stays neutral.
+- **Democrats, all of them.** The project tracks Democratic members of Congress
+  and the independents who caucus with them. Leadership and its critics are held
+  to the same standard.
+- **Classify by the member's own words.** An entry records what a member said,
+  not what anyone expects or hopes they will do. The rules are in
+  [data/README.md](data/README.md).
 - **Everything has a source.** A declaration, a claim about chamber rules or a
   data-source note needs a link someone else can check.
 - **Nothing is silently changed.** Positions are corrected by adding to their

@@ -158,6 +158,9 @@ REPO_URL = "https://github.com/calebjpicker/on-the-record"
 FONTS = ("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500"
          "&family=Public+Sans:wght@400;500;600;700&display=swap")
 
+FOOTER_NOTE = ("Open source. Data released under CC0. "
+               "Independent: not affiliated with Congress or the Democratic Party.")
+
 
 def page(title: str, body: str, root: str) -> str:
     """Wrap page content in the shared layout. `root` is the relative path to the site root."""
@@ -183,7 +186,7 @@ def page(title: str, body: str, root: str) -> str:
 {body}
 </div></main>
 <footer class="site"><div class="wrap">
-<span>Open source. Data released under CC0. Not affiliated with Congress or any party.</span>
+<span>{escape(FOOTER_NOTE)}</span>
 <span>Built {date.today().isoformat()}</span>
 </div></footer>
 </body>
@@ -280,9 +283,10 @@ def render_contest(contest) -> str:
 
 def render_index(contests) -> str:
     parts = [
-        "<h1>Where members of Congress say they stand, before the vote.</h1>",
-        '<p class="lede">A public record of what senators and representatives have said about how they '
-        "will vote. Anyone who has not said is listed as undeclared.</p>",
+        "<h1>Where Democrats in Congress say they stand, before the vote.</h1>",
+        '<p class="lede">A public record of what Democrats in the Senate and House have said about how '
+        "they will vote, so voters can hold them to it. Anyone who has not said is listed as "
+        "undeclared.</p>",
         "<h2>Contests</h2>",
         '<div class="cards">',
     ]
@@ -300,6 +304,8 @@ def render_index(contests) -> str:
     parts.append("</div>")
     parts.append(
         '<h2 id="how">How it works</h2><ul class="plain">'
+        "<li>The record covers Democrats in Congress and the independents who caucus with them. "
+        "Every one of them is held to the same standard.</li>"
         "<li>Each entry is something a member said in public, with a link to where it was reported.</li>"
         "<li>Entries are classified by the member's own words. A call for change that stops short of "
         "saying how the member will vote is listed as uncommitted.</li>"
