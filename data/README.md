@@ -19,7 +19,7 @@ Add an object to the contest's file in `declarations/`:
 | `position` | `supports`, `opposes` or `uncommitted`. See the rules below. |
 | `candidate` | The `id` of a candidate listed for the contest in `contests.json`. |
 | `basis` | `quote` if the source quotes the member directly, `reported` if it only describes the position. |
-| `statement` | The member's words in quotation marks, or a neutral one-sentence description of what the source reports. |
+| `statement` | The member's words in quotation marks, or a factual one-sentence description of what the source reports. |
 | `reported_on` | Publication date of the source, `YYYY-MM-DD`. |
 | `source_title` | Name of the outlet or site. |
 | `source_url` | A public `https://` link to the source. |
