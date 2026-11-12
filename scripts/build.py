@@ -173,7 +173,7 @@ def page(title: str, body: str, root: str) -> str:
 </head>
 <body>
 <div class="notice">Early version. Every entry is a public statement linked to its source.
-<a href="{REPO_URL}/issues">Report an error or add a statement</a>.</div>
+<a href="{REPO_URL}/issues/new?template=statement.yml">Report an error or add a statement</a>.</div>
 <header class="site"><div class="wrap">
 <a class="brand" href="{root}">On the Record</a>
 <nav aria-label="Main"><a href="{root}">Contests</a><a href="{root}#how">How it works</a>
