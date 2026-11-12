@@ -4,6 +4,7 @@ Everything here is plain JSON, dedicated to the public domain under CC0.
 
 - `contests.json`: each contest, who votes in it, its stages and its declared candidates.
 - `declarations/<contest-id>.json`: public statements by members who vote in that contest.
+- `rosters/<roster-id>.json`: everyone who votes in a contest, for contests that name a roster with `electorate`. Members on the roster with no statement are listed by name as undeclared.
 
 A member with no entry is **undeclared**. That is never written down; it is the default.
 
@@ -45,3 +46,18 @@ python3 scripts/build.py
 ```
 
 The second command writes the site to `_site/`. Open `_site/index.html` in a browser.
+
+## Rosters
+
+A roster lists everyone who votes in a contest. Each member has:
+
+| Field | Meaning |
+|---|---|
+| `name` | Name as commonly published. Declarations must use exactly the same spelling. |
+| `state` | Two-letter state code. |
+| `party` | `D`, or `I` for an independent who caucuses with Democrats. |
+| `status` | `continuing` (term runs into the new Congress), `re-elected`, `elect` (newly elected) or `pending` (race not called). |
+| `source_url` | A public `https://` link that shows the member's status. |
+| `note` | Optional. Anything that could change the member's status. |
+
+A candidate's `roster_name` in `contests.json` must match their roster entry. Candidates and uncalled races are not counted as undeclared.

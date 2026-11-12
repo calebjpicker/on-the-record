@@ -166,5 +166,17 @@
     "reported_on": "2026-11-04",
     "source_title": "Roll Call",
     "source_url": "https://rollcall.com/2026/11/04/will-be-reelected-as-majority-leader-schumer-says/"
+  },
+  {
+    "member": "Annie Andrews",
+    "role": "Senator-elect",
+    "seat": "D-SC",
+    "position": "uncommitted",
+    "candidate": "schumer",
+    "basis": "reported",
+    "statement": "Named by Newsweek among the senators-elect who have announced they are withholding support from Schumer or have called for new leadership.",
+    "reported_on": "2026-11-11",
+    "source_title": "Newsweek",
+    "source_url": "https://www.newsweek.com/chuck-schumer-senate-majority-leadership-democrats-12700175"
   }
 ]

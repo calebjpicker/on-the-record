@@ -6,10 +6,12 @@
     "summary": "Senate Democrats choose their leader for the next Congress. Because Democrats won the Senate majority on November 3, 2026, their leader becomes Majority Leader.",
     "who_votes": "Senators and senators-elect in the Senate Democratic caucus for the 120th Congress, including independents who caucus with Democrats.",
     "electorate_note": "Reported as 54 to 56 seats, with results still being finalized.",
+    "electorate": "senate-democratic-caucus-120",
     "candidates": [
       {
         "id": "schumer",
         "name": "Charles E. Schumer",
+        "roster_name": "Chuck Schumer",
         "seat": "D-NY",
         "note": "Current Democratic leader. Said on November 4, 2026: \"I'll be reelected as majority leader.\"",
         "source_title": "Roll Call, November 4, 2026",
