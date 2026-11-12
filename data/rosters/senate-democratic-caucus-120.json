@@ -1,0 +1,403 @@
+{
+  "id": "senate-democratic-caucus-120",
+  "title": "Senate Democratic caucus, 120th Congress",
+  "seat_title": "Senator",
+  "member_noun": "senators and senators-elect",
+  "as_of": "2026-11-12",
+  "description": "The roster lists every senator in the Democratic caucus whose term continues into the 120th Congress and every Democrat elected to the Senate in 2026, independents who caucus with Democrats included. Senators-elect are listed from AP and network race calls; states have not finished certifying results.",
+  "members": [
+    {
+      "name": "Mark Kelly",
+      "state": "AZ",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_III.htm"
+    },
+    {
+      "name": "Ruben Gallego",
+      "state": "AZ",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "Adam Schiff",
+      "state": "CA",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "Alex Padilla",
+      "state": "CA",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_III.htm"
+    },
+    {
+      "name": "Michael Bennet",
+      "state": "CO",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://coloradosun.com/2026/06/30/colorado-primary-election-governor-phil-weiser-michael-bennet/"
+    },
+    {
+      "name": "Chris Murphy",
+      "state": "CT",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "Richard Blumenthal",
+      "state": "CT",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_III.htm"
+    },
+    {
+      "name": "Lisa Blunt Rochester",
+      "state": "DE",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "Raphael Warnock",
+      "state": "GA",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_III.htm"
+    },
+    {
+      "name": "Brian Schatz",
+      "state": "HI",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_III.htm"
+    },
+    {
+      "name": "Mazie Hirono",
+      "state": "HI",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "Tammy Duckworth",
+      "state": "IL",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_III.htm"
+    },
+    {
+      "name": "Elizabeth Warren",
+      "state": "MA",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "Angela Alsobrooks",
+      "state": "MD",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "Chris Van Hollen",
+      "state": "MD",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_III.htm"
+    },
+    {
+      "name": "Angus King",
+      "state": "ME",
+      "party": "I",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "Elissa Slotkin",
+      "state": "MI",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "Amy Klobuchar",
+      "state": "MN",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.mprnews.org/story/2026/11/03/when-amy-klobuchar-becomes-minnesota-governor-what-happens-to-her-us-senate-seat",
+      "note": "Elected governor of Minnesota. Expected to leave the Senate by her inauguration on January 4, 2027."
+    },
+    {
+      "name": "Maggie Hassan",
+      "state": "NH",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_III.htm"
+    },
+    {
+      "name": "Andy Kim",
+      "state": "NJ",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "Martin Heinrich",
+      "state": "NM",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "Catherine Cortez Masto",
+      "state": "NV",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_III.htm"
+    },
+    {
+      "name": "Jacky Rosen",
+      "state": "NV",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "Chuck Schumer",
+      "state": "NY",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_III.htm"
+    },
+    {
+      "name": "Kirsten Gillibrand",
+      "state": "NY",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "Ron Wyden",
+      "state": "OR",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_III.htm"
+    },
+    {
+      "name": "John Fetterman",
+      "state": "PA",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.nbcnews.com/politics/congress/m-not-going-republican-john-fetterman-promises-not-defect-rcna597988"
+    },
+    {
+      "name": "Sheldon Whitehouse",
+      "state": "RI",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "Tim Kaine",
+      "state": "VA",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "Bernie Sanders",
+      "state": "VT",
+      "party": "I",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "Peter Welch",
+      "state": "VT",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_III.htm"
+    },
+    {
+      "name": "Maria Cantwell",
+      "state": "WA",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "Patty Murray",
+      "state": "WA",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_III.htm"
+    },
+    {
+      "name": "Tammy Baldwin",
+      "state": "WI",
+      "party": "D",
+      "status": "continuing",
+      "source_url": "https://www.senate.gov/senators/Class_I.htm"
+    },
+    {
+      "name": "John Hickenlooper",
+      "state": "CO",
+      "party": "D",
+      "status": "re-elected",
+      "source_url": "https://www.cpr.org/2026/11/03/colorado-election-results-us-senate-hickenlooper-baisley/"
+    },
+    {
+      "name": "Chris Coons",
+      "state": "DE",
+      "party": "D",
+      "status": "re-elected",
+      "source_url": "https://www.delawareonline.com/story/news/politics/elections/2026/11/03/u-s-sen-chris-coons-heads-back-to-washington-after-besting-mike-katz/92513810007/"
+    },
+    {
+      "name": "Jon Ossoff",
+      "state": "GA",
+      "party": "D",
+      "status": "re-elected",
+      "source_url": "https://apnews.com/article/georgia-senate-ossoff-collins-midterm-election-32dad2d529f42d055326b9ea7df9ce05"
+    },
+    {
+      "name": "Ed Markey",
+      "state": "MA",
+      "party": "D",
+      "status": "re-elected",
+      "source_url": "https://www.wbur.org/news/2026/11/03/massachusetts-markey-senate-election-result"
+    },
+    {
+      "name": "Cory Booker",
+      "state": "NJ",
+      "party": "D",
+      "status": "re-elected",
+      "source_url": "https://www.nj.com/politics/2026/11/nj-sen-cory-booker-easily-wins-third-term.html"
+    },
+    {
+      "name": "Ben Ray Luján",
+      "state": "NM",
+      "party": "D",
+      "status": "re-elected",
+      "source_url": "https://www.abqjournal.com/news/lujan-breezes-to-second-term/3154396"
+    },
+    {
+      "name": "Jeff Merkley",
+      "state": "OR",
+      "party": "D",
+      "status": "re-elected",
+      "source_url": "https://www.opb.org/article/2026/11/03/oregon-state-senate-election-results-merkley-brock/"
+    },
+    {
+      "name": "Jack Reed",
+      "state": "RI",
+      "party": "D",
+      "status": "re-elected",
+      "source_url": "https://www.providencejournal.com/story/news/politics/elections/2026/11/03/ri-u-s-senate-results-2026-jack-reed-ray-mckay/92520440007/"
+    },
+    {
+      "name": "Mark Warner",
+      "state": "VA",
+      "party": "D",
+      "status": "re-elected",
+      "source_url": "https://www.vpm.org/npr-story/us-senate-mark-warner-bert-mizusawa-election-results-unofficial/"
+    },
+    {
+      "name": "Josh Turek",
+      "state": "IA",
+      "party": "D",
+      "status": "elect",
+      "source_url": "https://www.npr.org/2026/11/03/g-s1-148956/iowa-senate-race-josh-turek"
+    },
+    {
+      "name": "Juliana Stratton",
+      "state": "IL",
+      "party": "D",
+      "status": "elect",
+      "source_url": "https://www.pbs.org/newshour/politics/juliana-stratton-makes-history-with-black-women-in-the-senate"
+    },
+    {
+      "name": "Adam Hamilton",
+      "state": "KS",
+      "party": "D",
+      "status": "elect",
+      "source_url": "https://www.kansascity.com/news/politics-government/article317816989.html"
+    },
+    {
+      "name": "Troy Jackson",
+      "state": "ME",
+      "party": "D",
+      "status": "elect",
+      "source_url": "https://apnews.com/article/maine-senate-susan-collins-troy-jackson-election-ac895e873f373e5560c4a6c137b2ac19"
+    },
+    {
+      "name": "Abdul El-Sayed",
+      "state": "MI",
+      "party": "D",
+      "status": "elect",
+      "source_url": "https://apnews.com/article/michigan-senate-abdul-elsayed-mike-rogers-election-d546ffbcf04fbb4eb581f63f807a0609"
+    },
+    {
+      "name": "Peggy Flanagan",
+      "state": "MN",
+      "party": "D",
+      "status": "elect",
+      "source_url": "https://www.startribune.com/minnesota-senate-election-flanagan-wins/601901277"
+    },
+    {
+      "name": "Scott Colom",
+      "state": "MS",
+      "party": "D",
+      "status": "elect",
+      "source_url": "https://apnews.com/article/scott-colom-mississippi-senate-midterms-56c18f292a734443992f9466c3b0f346"
+    },
+    {
+      "name": "Roy Cooper",
+      "state": "NC",
+      "party": "D",
+      "status": "elect",
+      "source_url": "https://apnews.com/article/north-carolina-senate-roy-cooper-michael-whatley-6cc139bf37efe41050796457d3d57b74"
+    },
+    {
+      "name": "Chris Pappas",
+      "state": "NH",
+      "party": "D",
+      "status": "elect",
+      "source_url": "https://apnews.com/article/new-hampshire-senate-sununu-pappas-2b2235cf4d8ca6e0eebd2817bf8767f6"
+    },
+    {
+      "name": "Sherrod Brown",
+      "state": "OH",
+      "party": "D",
+      "status": "elect",
+      "source_url": "https://www.nbcnews.com/politics/2026-election/democrat-sherrod-brown-wins-ohio-senate-race-jon-husted-gop-rcna603317"
+    },
+    {
+      "name": "Annie Andrews",
+      "state": "SC",
+      "party": "D",
+      "status": "elect",
+      "source_url": "https://apnews.com/article/darline-graham-annie-andrews-south-carolina-midterms-74fc0bf08f5822378fcfa2fe09377d69"
+    },
+    {
+      "name": "James Talarico",
+      "state": "TX",
+      "party": "D",
+      "status": "elect",
+      "source_url": "https://apnews.com/article/texas-senate-talarico-paxton-midterm-election-66df71a7c2bfa962cffd4134ef1a0364"
+    },
+    {
+      "name": "Mary Peltola",
+      "state": "AK",
+      "party": "D",
+      "status": "pending",
+      "source_url": "https://apnews.com/article/alaska-senate-peltola-absentee-ballots-sullivan-f42a49a45a2870786f36086c7ad02824"
+    }
+  ]
+}
